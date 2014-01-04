@@ -1,0 +1,79 @@
+#unalias ll
+#ll()
+#{ 
+#	ls --color=always -l "$@"| egrep "^d" ; ls --color=always -lXB "$@" 2>&-| egrep -v "^d|total "; 
+#}
+
+full_host="$(hostname)"
+echo -ne "\033]0;${full_host}\007"
+ssh(){ /usr/bin/ssh $@;echo -ne "\033]0;${full_host}\007"}
+_ssh_auth_save(){ ln -sf "$SSH_AUTH_SOCK" "$HOME/.screen/ssh-auth-sock.$HOSTNAME" }
+alias screen='_ssh_auth_save ; export HOSTNAME=$(hostname) ; screen'
+
+#echo -ne "\033]0;${HOST}\007";
+#ssh(){ /usr/bin/ssh $@;echo -ne "\033]0;${HOST}\007";}
+
+#alias l='ls -lhF --group-directories-first'
+#alias ll='ls -lhaF --group-directories-first'
+alias l='ls -lhF'
+alias ll='ls -lhaF'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias cd..='cd ..'
+alias md='mkdir -p'
+alias vi=vim
+#alias vi=~/bin/vim
+#alias vim=~/bin/vim
+alias vl='vim -R -'
+alias py='python'
+#alias wcgrep="grep --color -E -R -n --exclude='*.svn-base' --include='*.phtml' --include='*.php' --include='*.inc' --include='*.linc' --include='*.tpl' --include='*.css' --include='*.html' --include='*.js'"
+#alias rg='grep -r --exclude-dir=.svn --exclude-dir=.git -n --color'
+
+#di(){ svn di $@ |vl; }
+#diw(){ svn di --diff-cmd diff -x -uw $@ |vl; }
+
+share(){
+	scp $@ dpp.su:my.dpp.su/htdocs/badoo/ && \
+	echo "http://my.dpp.su/badoo/`basename $@|sed 's/ /%20/g'`" || \
+	echo "ERR"
+}
+
+#alias zvq='source ~/bin/zvq-init'
+
+alias tap='synclient TapButton1=1'
+alias d3='ssh www1.d3'
+alias d4='ssh www1.d4'
+#badoo
+#alias rg='grep -r --exclude-dir={./.git,./js,./tpl,./css,.svn,./testlib} -n --color'
+alias rg='grep -rn --color --exclude-dir=.git --exclude-dir=.svn --exclude-dir=testlib'
+alias log='tail /local/php/log/badoo-`whoami`.log  -f -n100'
+alias logs='tail /local/php/log/badoo-`whoami`.log  -f -n100 |grep -v "\[tpl\]"'
+alias deploy='/local/php5/bin/php /local/deploy/src/_scripts/deploy/deployManager.php'
+alias b='cd ~/badoo/'
+#alias j='~/badoo/images/-/-/js/'
+alias phpb='/local/php5/bin/php'
+alias findx='find . -perm -o=x -type f'
+alias cplog='cp ~/badoo-trunk/_packages/core/{View.php,ViewFactory.php} _packages/core'
+jsl(){
+	name=$1
+	echo -ne 'vim ' && git log --stat --author=$name images/-/-/js|grep images/ |grep -oE '^ [^ ]+'|sort|uniq|xargs echo
+}
+
+#git
+co(){
+	#echo "\e[0;32m$(git br|grep -E '^\*')\e[0m"
+	echo "\e[0;32m*** $(git rev-parse --abbrev-ref HEAD)\e[0m"
+	git status
+}
+#alias co='git pull;git status'
+alias ci='git ci -v'
+alias up='git pull'
+alias i='git branch'
+alias di='git diff -M -C'
+alias dis='git diff -M -C --staged'
+alias dip='git diff -M -C --all --not ORIG_HEAD'
+alias diw='git diff -M -C -w'
+alias bdi='git diff -M -C master...'
+alias bl='git log -M -C --stat master..'
+
+

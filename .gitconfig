@@ -1,0 +1,23 @@
+[core]
+	pager = less -RSNx4
+[user]
+	email = dpp@dpp.su
+	name = dpp
+[color]
+	ui = true
+[alias]
+	di = diff -M -C
+	bd = diff -M -C master...
+	bl = log --stat -M -C master..
+	sh = show -M -C
+	ci = commit -v
+	co = checkout
+	br = branch
+	rb = rebase
+	st = status
+	up = pull
+	l  = log --stat
+	m  = checkout master
+	new = push -u origin HEAD
+	sl = stash list
+
