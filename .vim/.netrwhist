@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/dpp/badoo.git/images/-/-/js/jinba'
+let g:netrw_dirhist_2='/home/dpp/badoo.git/projects/Site'
+let g:netrw_dirhist_3='/home/dpp/badoo.git/api'
+let g:netrw_dirhist_4='/home/dpp/badoo.git/proto_api/generated'
+let g:netrw_dirhist_5='/home/dpp/.vim'
+let g:netrw_dirhist_6='/Users/dpp/Downloads/Мефодица.bundle/Contents'
+let g:netrw_dirhist_7='/Users/dpp/badoo.git'
