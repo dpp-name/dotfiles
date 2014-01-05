@@ -1,0 +1,8 @@
+#!/bin/sh
+set -e
+
+for f in $@; do
+	scp $f dpp.su:my.dpp.su/htdocs/badoo/
+	echo "http://my.dpp.su/badoo/`basename $f|sed 's/ /%20/g'`"
+done
+
