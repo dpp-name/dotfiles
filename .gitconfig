@@ -21,3 +21,5 @@
 	new = push -u origin HEAD
 	sl = stash list
 
+[push]
+	default = matching

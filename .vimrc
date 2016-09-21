@@ -13,7 +13,9 @@ set showcmd         " display incomplete commands
 set hlsearch        " highlight searches
 set incsearch       " do incremental searching
 set ignorecase      " case insensitive
-set mouse=a  		" enable mouse
+if has('mouse')
+	set mouse=a  		" enable mouse
+endif
 set nomousehide     " DON'T Hide the mouse when typing text
 set ruler           " show the cursor position all the time
 set visualbell t_vb=    " turn off error beep/flash
