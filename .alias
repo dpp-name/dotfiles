@@ -13,13 +13,10 @@ alias screen='_ssh_auth_save ; export HOSTNAME=$(hostname) ; screen'
 #echo -ne "\033]0;${HOST}\007";
 #ssh(){ /usr/bin/ssh $@;echo -ne "\033]0;${HOST}\007";}
 
-#alias l='ls -lhF --group-directories-first'
-#alias ll='ls -lhaF --group-directories-first'
-alias l='ls -lhF'
-alias ll='ls -lhaF'
-alias ..='cd ..'
-alias ...='cd ../..'
-alias cd..='cd ..'
+alias l='ls -lhF --group-directories-first --color=auto'
+alias ll='ls -lhaF --group-directories-first --color=auto'
+#alias l='ls -lhF'
+#alias ll='ls -lhaF'
 alias md='mkdir -p'
 alias vi=vim
 #alias vi=~/bin/vim

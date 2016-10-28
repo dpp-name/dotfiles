@@ -13,7 +13,8 @@ setopt appendhistory
 setopt hist_expire_dups_first
 # End of lines configured by zsh-newuser-install
 #PROMPT=$'%{\e[0;36m%}%n@%m %{\e[0m%}%t %{\e[0;35m%}%~%{\e[0m%}> '
-PROMPT=$'%n@%M %~> '
+#PROMPT=$'%n@%M %~> '
+PROMPT=$'%(!.%{\e[1;31m%}%n@%M%{\e[0m%}.%n@%M) %~> '
 
 #export WORKON_HOME=$HOME/.virtualenvs
 #source /usr/local/bin/virtualenvwrapper.sh
