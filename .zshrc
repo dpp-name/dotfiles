@@ -24,6 +24,8 @@ setopt noclobber #prevent files from accidential overriting. use >| to overrite
 source ~/.profile
 source ~/.alias
 
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
 #autoload -U up-line-or-beginning-search
 #autoload -U down-line-or-beginning-search
 #zle -N up-line-or-beginning-search

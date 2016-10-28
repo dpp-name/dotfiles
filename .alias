@@ -30,13 +30,14 @@ alias py='python'
 #diw(){ svn di --diff-cmd diff -x -uw $@ |vl; }
 
 share(){
-	scp $@ dpp.su:my.dpp.su/htdocs/badoo/ && \
+	scp $@ dpp.su:/local/my.dpp.su/htdocs/badoo/ && \
+	ssh dpp.su 'chmod go+r "/local/my.dpp.su/htdocs/badoo/'`basename $@`'"' \
 	echo "http://my.dpp.su/badoo/`basename $@|sed 's/ /%20/g'`" || \
 	echo "ERR"
 }
 share-short(){
 	file="`basename $@|sed 's/ /%20/g'`"
-	scp $@ dpp.su:my.dpp.su/htdocs/badoo/ && \
+	scp $@ dpp.su:/local/my.dpp.su/htdocs/badoo/ && \
 	curl http://my.dpp.su/l/ --data-urlencode "url=http://my.dpp.su/badoo/$file" -s || \
 	echo "ERR"
 }
