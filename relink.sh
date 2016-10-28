@@ -2,7 +2,7 @@
 
 set -ex
 
-files=".alias .gitconfig .profile .inputrc .screen .screenrc .vim .vimrc .zshrc"
+files=".alias .gitconfig .profile .screen .screenrc .vim .vimrc .zshrc"
 dir="$(dirname $0)"
 abs_dir="$(readlink -f $dir)"
 
