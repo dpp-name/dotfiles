@@ -32,7 +32,7 @@ set dir=/tmp//,.    " set swap file directory
 set wildignore=".git,.svn,*.pyc"
 set tabstop=4
 set shiftwidth=4
-set noexpandtab
+set expandtab
 set smarttab
 set cindent         " cindent
 set smartindent     " smart indent
@@ -50,7 +50,7 @@ au BufnewFile,BufRead *.php set syntax=php
 
 "let g:miniBufExplMapCTabSwitchBufs = 1
 
-set path=.,/home/dpp/badoo,/home/dpp/badoo/js,/home/dpp/badoo/_packages,/home/dpp/badoo/_packages/core,/home/dpp/badoo/_pages,/home/dpp/badoo/_views,/home/dpp/badoo/_templates/dev/-/
+set path=.,~/badoo,~/badoo/js,~/badoo/_packages,~/badoo/_packages/core,~/badoo/_pages,~/badoo/_views,~/badoo/_templates/dev/-/,~/mobileweb/js/
 
 nnoremap ; :
 let mapleader = ","
