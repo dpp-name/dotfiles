@@ -31,7 +31,7 @@ alias py='python'
 
 share(){
 	scp $@ dpp.su:/local/my.dpp.su/htdocs/badoo/ && \
-	ssh dpp.su 'chmod go+r "/local/my.dpp.su/htdocs/badoo/'`basename $@`'"' \
+	ssh dpp.su 'chmod go+r "/local/my.dpp.su/htdocs/badoo/'`basename $@`'"' && \
 	echo "http://my.dpp.su/badoo/`basename $@|sed 's/ /%20/g'`" || \
 	echo "ERR"
 }
