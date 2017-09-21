@@ -4,7 +4,7 @@ set -ex
 
 files=".alias .gitconfig .profile .screen .screenrc .vim .vimrc .zshrc"
 dir="$(dirname $0)"
-abs_dir="$(readlink -f $dir)"
+abs_dir="$(cd "$dir" && pwd -P)"
 
 for f in $files; do
 	if [ -f ~/$f ]; then
