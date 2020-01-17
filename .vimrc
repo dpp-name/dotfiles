@@ -90,6 +90,7 @@ nmap <silent> <F7> :NERDTreeToggle<cr>
 " au BufWinLeave * mkview
 " au BufWinEnter * silent loadview
 "let g:php_folding=2
+set nofoldenable
 
 
 function InsertTabWrapper()
