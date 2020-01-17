@@ -7,7 +7,7 @@
 full_host="$(hostname)"
 echo -ne "\033]0;${full_host}\007"
 ssh(){ /usr/bin/ssh $@;echo -ne "\033]0;${full_host}\007"}
-_ssh_auth_save(){ ln -sf "$SSH_AUTH_SOCK" "$HOME/.screen/ssh-auth-sock.$HOSTNAME" }
+_ssh_auth_save(){ if [ -f "$SSH_AUTH_SOCK" ]; then ln -sf "$SSH_AUTH_SOCK" "$HOME/.screen/ssh-auth-sock.$HOSTNAME"; fi }
 alias screen='_ssh_auth_save ; export HOSTNAME=$(hostname) ; screen'
 
 #echo -ne "\033]0;${HOST}\007";
