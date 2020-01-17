@@ -81,7 +81,7 @@ nmap <silent> <F7> :NERDTreeToggle<cr>
 " map ,cd :cd %:p:h<CR>
 
 " ,/ C/C++/C#/Java // comments
-" map ,/ :s/^/\/\//<CR>
+map ,/ :s/^/#/<CR>
 
 "set foldmarker={,}
 "set foldmarker=//{,//}
